@@ -20,7 +20,6 @@ import static Pages.P02_HomePage.getCurrentDate_MinusYearsPlusDays;
 public class D01_AgeGateway {
     public static WebDriver driver;
 
-    ////// Scenario 1: user login with valid data
     @Given("user navigate to jager meister website")
     public void userNavigateTo() {
         driver.get("https://www.jagermeister.com/en-GB/home");

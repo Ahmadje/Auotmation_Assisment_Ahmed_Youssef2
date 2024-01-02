@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -91,6 +92,17 @@ public class D01_AgeGateway {
     public void validateUnrealDate_ErrorMessage() throws InterruptedException {
         Thread.sleep(500);
         new P02_HomePage(driver).verifyUnrealDateErrorMsg();
+    }
+
+    @When("user navigate to jager meister website in new tab")
+    public void openNewTab() {
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.get("https://www.jagermeister.com/en-GB/home");
+        driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
+    }
+    @Then("user should directed to the site page without completing Age gateway")
+    public void userNavigatedWithoutAgeGateway() throws InterruptedException {
+        new P02_HomePage(driver).verifyUserRedirectedSuccessfully();
     }
 
     @Before

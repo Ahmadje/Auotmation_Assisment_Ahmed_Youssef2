@@ -15,7 +15,7 @@ Feature: Age Gateway
     When user enter valid date smaller than 18 years old
     Then Error message to appear with date entered is smaller than 18 years old
 
-  Scenario Outline: user enter inValid date
+  Scenario Outline: user enter uncompleted date
     Given user navigate to jager meister website
     When user enter inValid date "<DD>", "<MM>" and "<YYYY>"
     Then user should stay in same page
@@ -39,3 +39,10 @@ Feature: Age Gateway
     Given user navigate to jager meister website
     When user enter less than 1900 as year "22", "12" and "1899"
     Then Error message to appear with unReal date
+
+  Scenario: verify opening new session while old session remains valid
+    Given user navigate to jager meister website
+    When user enter valid date bigger than 18 years old
+    Then user directed to the site page without clicking Enter
+    And user navigate to jager meister website in new tab
+    Then user should directed to the site page without completing Age gateway

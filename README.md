@@ -1,6 +1,4 @@
-Certainly! Here's the revised guide with the customized formatting:
 
----
 
 ### **Executing Automation Scripts with IntelliJ IDEA**
 
@@ -40,7 +38,3 @@ Certainly! Here's the revised guide with the customized formatting:
         - *Open the feature file where the scenario or scenarios are written.*
         - *Look for the scenario or feature you want to execute.*
         - *Click on the green play icon (or the arrow) next to the scenario or feature to run it.*
-
----
-
-This updated guide uses bold font for the main section title and italicized font for the individual steps to enhance readability and emphasize the key points. Adjustments can be made based on your preferences or additional formatting needs.
